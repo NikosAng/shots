@@ -1,0 +1,325 @@
+body {
+  font-family: 'Garamond', serif;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #333; /* Default text color */
+  margin: 0;
+  
+}
+
+
+#header {
+  display: flex;
+  align-items: center; /* This centers items vertically in the container */
+  justify-content: center; /* This centers items horizontally in the container */
+  border-bottom: solid 2px #7f888f;
+  padding: 3em 0 1em 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background: #FCF5F5;
+  text-align: center; /* Centers the text */
+}
+
+#header .logo {
+  margin: 0 auto; /* Centers the logo */
+  border-bottom: 0;
+  color: inherit;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.125em;
+}
+
+#header .icons {
+  position: absolute; /* Position icons absolutely */
+  right: 0; /* Align icons to the right */
+}
+
+#header.smaller {
+  padding: 1.2em 0 0.2em 0;
+  font-size: 0.8em;
+}
+
+#logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.title-container {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.title {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.main-body {
+  margin: 0 auto;
+  max-width: 800px; /* Adjust as needed */
+  padding: 0 20px; /* Creates left and right margin */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.interactive-pitch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  position: relative; /* add this */
+  margin-top: 50px; 
+}
+
+#controls {
+  position: absolute;
+  left: 40%; /* center the controls */
+  top: -10px; /* position it just above the pitch */
+  transform: translateX(-50%); /* center the controls */
+  display: flex;
+  flex-direction: row; /* make controls stand next to each other */
+  gap: 20px;
+  background: #FCF5F5;; /* to make controls visible */
+}
+
+#heatmap {
+  width: 600px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#colorbar {
+  margin-top: 20px;
+
+}
+
+footer {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+#xg-plot {
+  width: 100%;
+  height: auto;  /* Adjust according to your design */
+  margin: auto;  /* Center  */
+
+}
+
+.xg-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+
+#xg-text {
+  flex: 1;
+  padding: 1px; /* Adjust as needed */
+}
+
+
+
+.parallax {
+  min-height: 750px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  max-width: 100vw;
+  margin-top: 120px; 
+  z-index: 1;  
+  }
+
+.parallax-teams {
+background-image: url("./footballshot.png");
+}
+
+
+.parallax-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
+  }
+
+#conversion {
+  width: 100%;
+  height: 500px;  /* Adjust according to your design */
+  margin: auto;
+}
+
+
+
+
+
+#situations {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  grid-gap: 0px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+
+#situations {
+  display: flex;
+  flex-wrap: wrap;  /* To wrap items onto new lines if they run out of space */
+  justify-content: space-between;
+  margin: auto;
+  font-size: 20px;
+}
+
+
+#legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
+#passes {
+  width: 100%;
+  height: auto;  /* Adjust according to your design */
+  margin: auto;  /* Center  */
+}
+
+.shots img {
+  width: 90%;  /* adjust the width as needed */
+  height: auto; /* adjust the height as needed */
+  margin: auto;
+}
+
+
+
+.colorbar-arrow {
+  font-size: 30px; /* Increased font-size to make the arrows appear larger. */
+}
+
+.colorbar-label {
+  font-size: 12px; /* Decreased font-size for 'More Shots' and 'Less Shots' text. */
+}
+
+.colorbar-main-label {
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: bold; /* Make 'Frequency of Shots' text bold. */
+}
+
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.methodology {
+  font-size: 0.75em; 
+}
+
+
+
+#bundesliga, #la_liga, #serie_a, #premier_league {
+  width: 40%; /* Increase the width from 60% to 80% */
+  margin: 20px auto; /* Increase the margin to give more space around each chart */
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+  body {
+    width: 100%;
+  }
+  .parallax {
+    width: 100%;
+    background-attachment: scroll;
+    background-size: cover;  /* Background image will cover the entire .parallax container */
+    background-position: center;  /* Background image will be centered */
+    margin: auto;
+}
+
+#situations {
+  flex-direction: column;  /* Stack the charts vertically */
+}
+
+#bundesliga, #la_liga, #serie_a, #premier_league {
+  width: 100%; /* Force each div to take the full width of the parent */
+  margin-bottom: 20px; /* Add some space between the divs */
+}
+
+#bundesliga svg, #la_liga svg, #serie_a svg, #premier_league svg {
+  max-width: 100%; /* Limit the svg to the width of the parent div */
+  height: auto;
+}
+
+
+
+
+  #situations {
+    grid-template-columns: 1fr; /* 1 column */
+    padding: 0 10%; /* Optional: add some horizontal padding */
+}
+
+
+#heatmap{
+  width: 100%;
+}
+
+
+#legend div {
+  font-size: 0.6em; /* Reduce the font-size */
+  flex-direction: column; /* Stack the color and text vertically */
+}
+
+#legend div div {
+  width: 32px;  /* Increase the color box size for better visibility */
+  height: 15px;
+}
+
+#passes {
+  width: 60%; 
+  margin: auto;
+}
+
+#conversion {
+  width: 60%;
+  height: 50%;
+  margin: auto;
+}
+
+#xg-plot {
+  width: 60%;
+  margin: 0;  /* Center  */
+  margin: auto;
+}
+
+
+}
