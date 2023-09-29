@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open-Play Shot Locations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="common.css">
+
+</head>
+<body>
+
+
+      <!-- Header image and title -->
+  <header id="header">
+    <a href="/home/index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+  </header>
+        <!-- Parallax background for "The Teams" -->
+        <div class="parallax parallax-teams">
+            <div class="parallax-caption">
+              How Have Shots Changed
+            </div>
+          </div>
+          <div class="main-body">
+        <div class="intro-text">
+            <p>
+                Over the past decade, football has experienced significant transformations. 
+                The introduction of analytics, the evolution of tactics and the of player's roles, and a shifting emphasis on possession and complex tactical structures 
+                have all reshaped the game. 
+                Amidst these changes, we ask ourselves how the nature of one the most fundamental elements of the game has changed: shots on goal.
+                For our analysis we'll use data on shots taken from the four largest football leagues in Europe: La Liga, Bundesliga, Premier League, and Serie A, spanning seven seasons from 2014/15 to 2020/21.
+
+                
+            </p>
+        </div>
+
+
+        <p>
+            Initially, we look at the circumstances leading up to shots. 
+            The barplots show the situations from which shots to goal arise. 
+            What's  striking is that there is an impressive consistency both across seasons and leagues. 
+            Approximately 70% of shots originate from open play, followed by corners (15%), set pieces (5%), direct free kicks (3%), and penalties.
+        </p>
+
+
+
+        <div id="title" style="text-align:center; font-size:20px; font-weight:bold; margin-bottom:10px;">Situations from Which Shots on Goal Arise</div>
+
+        <div id="situations">
+            <div id="bundesliga"></div>
+            <div id="la_liga"></div>
+            <div id="serie_a"></div>
+            <div id="premier_league"></div>
+            <div id="legend"></div>
+        </div>
+
+
+        <p>
+            Delving deeper into open play shots, we investigate their origin - are they a product of passing or the result of individual skills and rebounds? 
+            Generally, the percentage of Open Play shots arising from passes shows minor fluctuations, floating between 50 and 60%. 
+            Serie A and Premier league are relatively stable in this respect. 
+            There is a sharp upward trend in Bundesliga with the percentage rising from 52% in 2014/15 to 58% in 2020/21.
+            And similarly there is a noticeable upward trend in La Liga with the percentage rising from 54% to 57%.
+
+        </p>
+
+        <div id="passes"></div>
+
+
+        <p>
+            Having established shot contexts, we now shift our attention to the accuracy of shots taken. 
+            As an initial rough proxy to gauge this, we examine the median expected goals (xGoals) across the leagues over the seven seasons. 
+            In all leagues there is a notable upward trend, teams are clearly generating better chances of scoring goals. 
+        </p>
+
+   
+        
+
+            <div id="xg-plot"></div>
+
+
+            <p>
+                The xGoals graph doesn't give the whole picture however. 
+                The boost in xGoals might be due to either an enhancement in shot precision or an increase in shot attempts. 
+                To disentangle this, we delve into the shot conversion rate, the ratio of shots resulting in goals. 
+                Except for Serie A, where there's a considerable rise, signifying a more prolific and accurate shooting rate, the conversion rate remains relatively stable.
+            </p>
+          
+          <div id="conversion"></div>
+
+
+
+
+
+             <p>
+                The last segment of our analysis focuses on the location from which shots are taken. 
+                We represent this visually using heatmaps over football pitches that show 
+                the percentage change in shot volume based on pitch location between seasons 2014/15 and 2020/21. 
+                In general, the heatmaps hint at a strategic shift towards more shots within the penalty area, accompanied by a decrease in shots from further out.
+                Starting with the Premier League it's clear that there's been a significant reduction in shots made outside the box, 
+                indicated by the prevalent red color. Inside the box, the color shifts to blue, albeit with sporadic red patches.
+                
+            </p>
+
+            <div class="image-container">
+                <img src="./assets/pl.png">
+              </div>
+
+            <p>
+                Moving on to Serie A we see the same pattern as above. An overall decline of shots taken as the distance from the goal increases. 
+                The closer we get to the box the bluer the color gets. 
+            </p>
+              
+              <div class="image-container">
+                <img src="./assets/seriea.png">
+              </div>
+              <p>
+                Things are not as clear in La Liga though. 
+            </p>             
+
+              <div class="image-container">
+                <img src="./assets/laliga.png">
+              </div>
+              <p>
+                Finally, in Bundesliga, there are more shots taken from inside the box than from outside in 2020/21 as compared to 2014/15. 
+            </p>       
+              <div class="image-container">
+                <img src="./assets/bundesliga.png">
+              </div>
+              
+              
+
+        <p>
+            This pattern appears to corroborate the rise in xGoals, suggesting that players 
+            are opting for higher quality shots from within the penalty area over long-range attempts. 
+            We further complement this analysis with an interactive 2D density plot, offering  a visualization of shot density in each season across different leagues.
+
+
+            
+        </p>
+        <div id="title" style="text-align:center; font-size:20px; font-weight:bold; margin-bottom:10px;">Shot Locations</div>
+
+        <div class="interactive-pitch">
+            <div id="controls">
+                <label for="season">Season:</label>
+                <select id="season">
+                    <option value="1415">2014/2015</option>
+                    <option value="1516">2015/2016</option>
+                    <option value="1617">2016/2017</option>
+                    <option value="1718">2017/2018</option>
+                    <option value="1819">2018/2019</option>
+                    <option value="1920">2019/2020</option>
+                    <option value="2021">2020/2021</option>
+                </select>
+                
+                
+                <label for="league">League:</label>
+                <select id="league">
+                    <option value="bundesliga">Bundesliga</option>
+                    <option value="laliga">La Liga</option>
+                    <option value="premier_league">Premier League</option>
+                    <option value="serie_a">Serie A</option>
+                </select>
+            </div>
+
+            <div id="heatmap"></div>
+            <div id="colorbar"></div>
+        </div>
+
+    <hr> <!-- This is the horizontal line -->
+    <div class="methodology">
+        <h2>Sources and Methodology</h2>
+        <p>The analysis presented is based on shot data gathered from Understat, available at Edd Webster's <a href="https://github.com/eddwebster/football_analytics/tree/master/data/understat/shots">GitHub repository</a>. 
+           
+        The initial raw data was processed and cleaned using R.
+        Following data cleaning, we conducted an exploratory data analysis in R to understand the patterns and trends in the data. 
+        This involved binning the data based on shot location, grouping, and calculating shot count differences.
+        Data visualization was performed using a combination of R and D3, a JavaScript library for producing dynamic and interactive data visualizations.
+    </p>
+
+    <p>The title image was generated in Midjourney.</p>
+
+    <p>The visualizations of shot locations were inspired by Mark Carey's<a href="https://github.com/eddwebster/football_analytics/tree/master/data/understat/shots"> piece for the Athletic</a>
+        and John Muller's <a href="https://github.com/eddwebster/football_analytics/tree/master/data/understat/shots">piece for FiveThirtyEight</a>.
+    </p>
+    </div>
+    
+
+
+    </div>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-contour.v1.min.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+    <script src="viz.js"></script>
+    <script src="medianxg.js"></script>
+    <script src="conversion.js"></script>
+    <script src="situations.js"></script>
+    <script src="passes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+		$(document).ready(function(){
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 50) { // if you've scrolled more than 50px
+					$('#header').addClass('smaller');
+				} else {
+					$('#header').removeClass('smaller');
+				}
+			});
+		});
+		</script>
+</body>
+</html>
+ 
